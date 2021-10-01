@@ -1,0 +1,24 @@
+{
+    "product-list": {
+        "image": "Image",
+        "name": "Name",
+        "category": "Category",
+        "price": "Price",
+        "description": "Description",
+        "products": "Products",
+        "add": "Add",
+        "update": "Update",
+        "delete": "Delete",
+        "create-product": "Create Product",
+        "update-product": "Update Product",
+        "save": "Save"
+    },
+    "category-list": {
+        "categories": "Categories"
+    },
+    "login": {
+        "login": "Login",
+        "name": "Name",
+        "password": "Password"
+    }
+}

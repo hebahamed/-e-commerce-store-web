@@ -1,0 +1,11 @@
+<div class="categories-container">
+    <header>{{'category-list.categories'|translate}}</header>
+    <div class="category-card" *ngFor="let category of allCategories" (click)="showProductsCategory(category)">
+        <div class="card_title title-white">
+            <p>{{category}}</p>
+        </div>
+    </div>
+    <div class="loading-spinner" *ngIf="isLoading || isError">
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+</div>

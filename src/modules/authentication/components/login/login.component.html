@@ -1,0 +1,33 @@
+<div class="create-account-container">
+    <div class="form-container">
+        <div class="form-heading">
+            {{'login.login'|translate}}
+        </div>
+        <div class="inputs-container">
+            <div class="name-section">
+                <div class="field-item">
+                    <div class="field-label">
+                        {{'login.name'|translate}}
+                    </div>
+                    <input class="input-field" type="text" [placeholder]="'First name'" [(ngModel)]="user.username" />
+                </div>
+            </div>
+
+            <div class="password-section">
+                <div class="field-item">
+                    <div class="field-label">
+                        {{'login.password'|translate}}
+                    </div>
+                    <input class="input-field" type="password" [placeholder]="'Password'" autocomplete="username"
+                        [(ngModel)]="user.password" />
+                    <div class="stepper-section">
+                    </div>
+                </div>
+            </div>
+
+            <button class="create-btn" (click)="login()">
+                {{'login.login'|translate}}
+            </button>
+        </div>
+    </div>
+</div>

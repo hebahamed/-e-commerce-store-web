@@ -1,0 +1,107 @@
+.create-account-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background: url("/assets/imgs/shop3.jpg") no-repeat !important;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+
+  .form-container {
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 40px;
+    width: 30%;
+    margin-inline-end: 5%;
+
+    @media only screen and (max-width: 768px) {
+      width: 90%;
+      padding: 24px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 89%;
+    padding: 24px;
+  }
+
+  .form-heading {
+    font-family: "SF Compact Display";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 40px;
+    color: #202020;
+    margin-bottom: 40px;
+  }
+
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+
+    .name-section,
+    .password-section {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: space-between;
+
+      .field-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+        .field-label {
+          font-family: "SF Compact Display";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          color: #202020;
+          margin-bottom: 10px;
+        }
+
+        .input-field {
+          background: #ffffff;
+          border: 1px solid #dbdbdb;
+          box-sizing: border-box;
+          border-radius: 4px;
+          order: 1;
+          align-self: stretch;
+          flex-grow: 1;
+          width: 100%;
+          padding: 7px 10px;
+        }
+      }
+    }
+
+    .password-section {
+      margin-top: 30px;
+      .field-item {
+        width: 100%;
+      }
+    }
+  }
+}
+.create-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: #202020;
+  border-radius: 4px;
+  width: 100%;
+  font-family: "SF Compact Display";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 20px;
+  color: #ffffff;
+  margin-top: 40px;
+  padding: 14px 0;
+  border: none;
+  cursor: pointer;
+}

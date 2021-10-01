@@ -1,0 +1,66 @@
+.create-update-product-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  flex-direction: column;
+
+  header {
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #202020;
+    margin-bottom: 5%;
+  }
+  .inputs-container {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+
+    .name-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      justify-content: space-between;
+
+      .field-item {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 2%;
+
+        .field-label {
+          font-family: "SF Compact Display";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 16px;
+          display: flex;
+          align-items: center;
+          color: #202020;
+          margin-bottom: 10px;
+        }
+
+        .input-field {
+          background: #ffffff;
+          border: 1px solid #dbdbdb;
+          box-sizing: border-box;
+          border-radius: 4px;
+          order: 1;
+          align-self: stretch;
+          flex-grow: 1;
+          width: 100%;
+          padding: 7px 10px;
+        }
+      }
+    }
+
+    .create-btn {
+      padding: 10px;
+      background-color: black;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  }
+}

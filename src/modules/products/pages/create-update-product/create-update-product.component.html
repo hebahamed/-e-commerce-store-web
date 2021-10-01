@@ -1,0 +1,47 @@
+<div class="create-update-product-container">
+    <header *ngIf="!isUpdateMode">{{'product-list.create-product'|translate}}</header>
+    <header *ngIf="isUpdateMode">{{'product-list.update-product'|translate}}</header>
+
+    <div class="inputs-container">
+        <div class="name-section">
+            <div class="field-item">
+                <div class="field-label">
+                    {{'product-list.name'|translate}}
+                </div>
+                <input class="input-field" type="text" [placeholder]="'product-list.name'|translate"
+                    [(ngModel)]="product.title" />
+            </div>
+            <div class="field-item">
+                <div class="field-label">
+                    {{'product-list.description'|translate}}
+                </div>
+                <input class="input-field" type="text" [placeholder]="'product-list.description'|translate"
+                    [(ngModel)]="product.description" />
+            </div>
+            <div class="field-item">
+                <div class="field-label">
+                    {{'product-list.category'|translate}}
+                </div>
+                <input class="input-field" type="text" [placeholder]="'product-list.category'|translate"
+                    [(ngModel)]="product.category" />
+            </div>
+            <div class="field-item">
+                <div class="field-label">
+                    {{'product-list.price'|translate}}
+                </div>
+                <input class="input-field" type="text" [placeholder]="'product-list.price'|translate"
+                    [(ngModel)]="product.price" />
+            </div>
+            <div class="field-item">
+                <div class="field-label">
+                    {{'product-list.image'|translate}}
+                </div>
+                <input class="input-field" type="text" [placeholder]="'product-list.image'|translate"
+                    [(ngModel)]="product.image" />
+            </div>
+        </div>
+        <button class="create-btn" (click)="isUpdateMode?updateProduct():saveProduct()">
+            {{'product-list.save'|translate}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="product-container">
+    <div class="product-heading">
+        <div class="heading-text">{{'product-list.products'|translate}}</div>
+        <button class="filter-btn" mat-button [matMenuTriggerFor]="menu">Select Category</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item *ngFor="let category of allCategories"
+                (click)="getAllProductsCategory(category)">{{category}}</button>
+        </mat-menu>
+        <button class="add-btn" *ngIf="loginController.role==='admin'" mat-button color="primary"
+            (click)="addProduct()">{{'product-list.add'|translate}}</button>
+    </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef [style.width]="'17%'"> {{'product-list.image'|translate}} </th>
+            <td mat-cell *matCellDef="let element">
+                <img [src]="element.image">
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef [style.width]="'19%'"> {{'product-list.name'|translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef [style.width]="'19%'"> {{'product-list.price'|translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef [style.width]="'19%'"> {{'product-list.category'|translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="description" [style.width]="'22%'">
+            <th mat-header-cell *matHeaderCellDef> {{'product-list.description'|translate}} </th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+        </ng-container>
+        <ng-container matColumnDef="buttons" [style.width]="'22%'">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <div class="btns-container">
+
+                    <button *ngIf="loginController.role==='admin'" class="update-btn" mat-raised-button
+                        (click)="addProduct(element)">{{'product-list.update'|translate}}</button>
+                    <button *ngIf="loginController.role==='admin'" mat-raised-button color="warn"
+                        (click)="deleteProduct(element)">{{'product-list.delete'|translate}}</button>
+                </div>
+            </td>
+        </ng-container>
+
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <div class="loading-spinner" *ngIf="isLoading || isError">
+        <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </div>
+</div>
